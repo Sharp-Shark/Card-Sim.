@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Canvas Game</title>
+		<style>
+			body {
+				background-color: #1c2833;
+				color: #abb2b9;
+				font-family: "Lucida Console", "Courier New", monospace;
+				margin: 0;
+				padding: 0;
+			}
+			.mono {
+				font-family: "Lucida Console", "Courier New", monospace;
+			}
+			canvas {
+				border-style: hidden;
+				background-color: darkgreen;
+				margin: 0;
+				padding: 0;
+			}
+			.input {
+				background-color: #2e4053;
+				color: #abb2b9;
+				border-style: solid;
+				border-color: #1c2833;
+				border-radius: 4px;
+				padding: 4px;
+ 				transition: background-color 0.2s, color 0.2s;
+				transition-timing-function: ease-in-out;
+			}
+			.input:hover {
+				background-color: #34495e;
+				color: #abb2b9;
+ 				transition: background-color 0.2s;
+				transition-timing-function: ease-in-out;
+			}
+			.input:focus {
+				background-color: #34495e;
+				color: white;
+			}
+			.card {
+				font-size: 16px;
+			}
+			.bigText {
+				font-size: 24px;
+			}
+			.debug {
+				font-size: 16px;
+				background-color: black;
+				color: limegreen;
+				padding: 4px;
+				width: 1200px;
+				font-family: "Lucida Console", "Courier New", monospace;
+				border-style: hidden;
+			}
+			#debug {
+				background-color: black;
+				color: green;
+				padding: 4px;
+				font-family: "Lucida Console", "Courier New", monospace;
+			}
+			#cheatInput {
+				font-size: 16px;
+				background-color: black;
+				color: limegreen;
+				padding: 4px;
+				width: 192px;
+				font-family: "Lucida Console", "Courier New", monospace;
+				border-style: hidden;
+ 				transition: width 0.4s ease-in-out, color 0.4s ease-in-out;
+			}
+			#cheatInput:focus {
+				width: 1024px;
+				color: lime;
+ 				transition: width 0.4s ease-in-out, color 0.4s ease-in-out;
+			};
+			.canvas {
+    			position: fixed;
+			};
+		</style>
+	</head>
+	<body>
+		<canvas id="screen" class="canvas"></canvas>
+		<div id="debugdiv">
+		<div class="debug">
+			eval(<input placeholder="insert code here..." id="cheatInput" onchange="eval(document.getElementById('cheatInput').value);document.getElementById('cheatInput').value='';"></input>);
+			<pre id="debug"></pre>
+		</div>
+		</div>
+		<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>
